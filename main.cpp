@@ -1,3 +1,8 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <cstdlib>
+#include <ctime>
 
-int main() { std::cout << "Hello World!\n"; }
