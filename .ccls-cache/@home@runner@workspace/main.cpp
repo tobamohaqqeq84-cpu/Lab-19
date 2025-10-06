@@ -27,7 +27,7 @@
               head = nullptr;
             }
 ~Movie() {
-  Review current = head;
+  Review* current = head;
   while (current){
     Review* temp =current;
     current = current->next;
@@ -42,5 +42,24 @@ void addReview(double rating, const string& comment){
     newReview->next = head;
     head = newReview;
 }
+void displayReviews() const{
+  cout << "\nMovie Title: " << title << endl;
+  if (!head) {
+    cout << "No reviews available." << endl;
+    return;
+  }
+  Review* current = head;
+  int count = 0;
+  double total = 0; 
 
+    while (current){
+      cout << fixed << setprecision(1);
+      cout << "    > Review #" << ++count << ": " << current->rating         << " - " << current->comment << endl;
+      total += current->rating;
+      current = current->next;
     }
+  
+}
+}
+
+    
